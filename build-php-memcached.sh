@@ -11,11 +11,11 @@ mkdir -p php-couchbase-memcached
 
 cd libmemcached
   ./config/autorun.sh
-  ./configure --disable-shared --enable-static --prefix=`pwd`/../usr
+  ./configure --disable-shared --enable-static --prefix=`pwd`/../usr $(EXTRA_LIBMEMCACHED_CONFIGURE)
   make
   # make test
   make install
-cd .. 
+cd ..
 
 cd php-memcached
   phpize
