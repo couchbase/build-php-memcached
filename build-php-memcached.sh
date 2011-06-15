@@ -12,7 +12,7 @@ cd libmemcached
   ./config/autorun.sh
   ./configure --disable-shared --enable-static --prefix=`pwd`/../usr
   make
-  make test
+  # make test
   make install
 cd .. 
 
