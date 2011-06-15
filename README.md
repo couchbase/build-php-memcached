@@ -39,6 +39,6 @@ Or a corresponding section in your `<?php phpinfo(); ?>` output.
 ## Dependencies
 
  - GNU Autotools, build essentials
- - php and php-dev packages
+ - php and php-devel packages
  - all other dependencies of libmemcached.
 
