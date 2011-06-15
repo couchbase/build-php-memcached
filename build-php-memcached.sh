@@ -9,6 +9,7 @@ rm -rf usr
 mkdir -p usr
 
 cd libmemcached
+  ./config/autorun.sh
   ./configure --disable-shared --enable-static --prefix=`pwd`/../usr
   make
   make test
