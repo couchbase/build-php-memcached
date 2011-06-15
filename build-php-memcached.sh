@@ -6,7 +6,8 @@ if [ ! -d libmemcached -o ! -d php-memcached ]; then
 fi
 
 rm -rf usr php-couchbase-memcached
-mkdir -p usr php-couchbase-memcached/
+mkdir -p usr
+mkdir -p php-couchbase-memcached
 
 cd libmemcached
   ./config/autorun.sh
