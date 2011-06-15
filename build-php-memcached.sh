@@ -5,8 +5,8 @@ if [ ! -d libmemcached -o ! -d php-memcached ]; then
   exit 1
 fi
 
-rm -rf usr
-mkdir -p usr
+rm -rf usr php-couchbase-memcached
+mkdir -p usr php-couchbase-memcached/
 
 cd libmemcached
   ./config/autorun.sh
@@ -20,11 +20,11 @@ cd php-memcached
   phpize
   ./configure --with-libmemcached-dir=`pwd`/../usr/
   make
-  PIDFILE=/tmp/mc$$.pid
-  memcached -P $PIDFILE -d
-  NO_INTERACTION=true make test
-  kill `cat $PIDFILE`
-  rm $PIDFILE
+  # PIDFILE=/tmp/mc$$.pid
+  # memcached -P $PIDFILE -d
+  # NO_INTERACTION=true make test
+  # kill `cat $PIDFILE`
+  # rm $PIDFILE
 cd ..
 
 # package
