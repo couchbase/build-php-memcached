@@ -34,6 +34,15 @@ cd ..
 cp php-memcached/.libs/memcached.so php-couchbase-memcached/
 tar czf php-couchbase-memcached.tar.gz php-couchbase-memcached
 
+# cleanup
+cd libmemcache
+  make clean
+cd ..
+
+cd php-memcached
+  make clean
+cd ..
+
 echo "Done, created php-couchbase-memcached.tar.gz"
 
 # Done
