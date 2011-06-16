@@ -21,7 +21,7 @@ cd ..
 
 cd php-memcached
   phpize
-  ./configure --with-libmemcached-dir=`pwd`/../usr/
+  ./configure --with-libmemcached-dir=`pwd`/../usr/ --disable-memcached-sasl
   make
   # PIDFILE=/tmp/mc$$.pid
   # memcached -P $PIDFILE -d
