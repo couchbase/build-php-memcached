@@ -35,7 +35,7 @@ cp php-memcached/.libs/memcached.so php-couchbase-memcached/
 tar czf php-couchbase-memcached.tar.gz php-couchbase-memcached
 
 # cleanup
-cd libmemcache
+cd libmemcached
   make clean
 cd ..
 
