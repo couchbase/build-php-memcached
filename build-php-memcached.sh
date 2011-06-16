@@ -12,7 +12,6 @@ mkdir -p php-couchbase-memcached
 cd libmemcached
   ./config/autorun.sh
   CFLAGS=-fPIC ./configure --disable-shared --enable-static \
-    --disable-memcached-sasl \
     --prefix=`pwd`/../usr \
     $EXTRA_LIBMEMCACHED_CONFIGURE
   make
