@@ -23,11 +23,11 @@ cd php-memcached
   phpize
   ./configure --with-libmemcached-dir=`pwd`/../usr/ --disable-memcached-sasl
   make
-  # PIDFILE=/tmp/mc$$.pid
-  # memcached -P $PIDFILE -d
-  # NO_INTERACTION=true make test
-  # kill `cat $PIDFILE`
-  # rm $PIDFILE
+  PIDFILE=/tmp/mc$$.pid
+  memcached -P $PIDFILE -d
+  NO_INTERACTION=true make test
+  kill `cat $PIDFILE`
+  rm $PIDFILE
 cd ..
 
 # test
