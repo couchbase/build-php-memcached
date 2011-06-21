@@ -3,7 +3,7 @@
 Contents:
 
   ./
-  ./README          This file.
+  ./README.md       This file.
   ./memcached.so    The PHP extension as a shared library.
 
 
@@ -13,8 +13,9 @@ Edit your `php.ini` to include this line:
 
     extension=memcached.so
 
-To find where you `php.ini` file is, try `phpi -i | grep ini` or look at your
-`<?php phpinfo() ?>` output.
+To find where you `php.ini` file is, try `phpi -i | grep memcached` or look
+at your `<?php phpinfo() ?>` output.
+
 
 ## Verify Installation
 
