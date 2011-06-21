@@ -1,44 +1,38 @@
-# Builds php-memcached
+# Couchbase driver for PHP
 
-Currently hardcoded, this links libmemcached statically to make deployments easy.
+Contents:
 
-Start the build with:
+  ./
+  ./README          This file.
+  ./memcached.so    The PHP extension as a shared library.
 
-    $ make
 
-You will see a lot of build and test suite output, do not worry, this takes a while due to libmemcached's `make test` not being very fast.
+## Installation
 
-If all is well, you will see at the end:
+Edit your `php.ini` to include this line:
 
-> Done, created php-couchbase-memcached.tar.gz
+    extension=memcached.so
 
-The .tar.gz will include a file `memcached.so` that is a PHP extension.
+To find where you `php.ini` file is, try `phpi -i | grep ini` or look at your
+`<?php phpinfo() ?>` output.
 
-Install it by adding this to your `php.ini`:
+## Verify Installation
 
-    extension=/path/to/memcache.so
+Run this test script:
 
-Now your php should have memcached support enabled and you should see something like this:
+    <?php
+    $mc = new Memcached;
+    $mc->addServer("localhost", 11211);
+    $mc->set("a", 1);
+    var_dump($mc->get("a"));
 
-    $ php -i | grep memcached
-    memcached
-    memcached support => enabled
-    libmemcached version => 0.43
-    memcached.compression_factor => 1.3 => 1.3
-    memcached.compression_threshold => 2000 => 2000
-    memcached.compression_type => fastlz => fastlz
-    memcached.serializer => php => php
-    memcached.sess_lock_wait => 150000 => 150000
-    memcached.sess_locking => 1 => 1
-    memcached.sess_prefix => memc.sess.key. => memc.sess.key.
-    memcached.use_sasl => 0 => 0
-    Registered save handlers => files user sqlite memcached 
+Make sure you have started your memcached, Membase or Couchbase server. Adjust
+the hostname and port as needed.
 
-Or a corresponding section in your `<?php phpinfo(); ?>` output.
 
-## Dependencies
+## Support
 
- - GNU Autotools, build essentials
- - php and php-devel packages
- - all other dependencies of libmemcached.
+If you have an questions, problems or suggestions, please let us know on the
+Couchbase SDK forums:
 
+http://www.couchbase.org/forums/sdks/sdks
