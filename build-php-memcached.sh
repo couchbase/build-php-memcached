@@ -30,6 +30,15 @@ cd php-memcached
   # rm $PIDFILE
 cd ..
 
+# test
+PHP=`which php`
+PHP_CMD="$PHP -d extension=php-memcached/.libs/memcached.so -i"
+PHP_RESULT=`$PHP_CMD| grep 'memcached support => enabled'`
+if [ -z "$PHP_RESULT" ]; then
+  echo "Can't load memcached extension, exiting."
+  exit 1;
+fi
+
 # package
 cp php-memcached/.libs/memcached.so php-couchbase-memcached/
 tar czf php-couchbase-memcached.tar.gz php-couchbase-memcached
