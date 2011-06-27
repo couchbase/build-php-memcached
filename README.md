@@ -37,3 +37,24 @@ If you have an questions, problems or suggestions, please let us know on the
 Couchbase SDK forums:
 
 http://www.couchbase.org/forums/sdks/sdks
+
+
+## Build from Source
+
+To build this package from source, follow these steps:
+
+### Get Repo
+
+    $ curl http://android.git.kernel.org/repo > ~/bin/repo
+    $ chmod a+x ~/bin/repo
+
+### Get Source
+
+    $ mkdir php-couchbase-memcached
+    $ repo init -u git://github.com/couchbase/php-memcached-manifest.git
+
+### Build
+
+    $ ./build-couchbase-memcached/build-couchbase-memcached.sh
+
+Done.
