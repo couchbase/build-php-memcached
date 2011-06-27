@@ -15,7 +15,7 @@ cd libmemcached
     --prefix=`pwd`/../usr \
     $EXTRA_LIBMEMCACHED_CONFIGURE
   make
-  make test
+  # make test
   make install
 cd ..
 
