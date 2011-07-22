@@ -42,6 +42,7 @@ fi
 # package
 cp php-memcached/.libs/memcached.so php-couchbase-memcached/
 cp build-php-memcached/README.md php-couchbase-memcached/
+cp -r php-couchbase/* php-couchbase-memcached/
 tar czf php-couchbase-memcached.tar.gz php-couchbase-memcached
 
 # cleanup
