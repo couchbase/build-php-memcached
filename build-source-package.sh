@@ -1,6 +1,6 @@
 #!/bin/sh -ex
 
-NAME=php-couchbase-memcached
+NAME=php-couchbase-memcached-source
 rm -rf $NAME
 mkdir $NAME
 cd $NAME
