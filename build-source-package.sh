@@ -1,17 +1,19 @@
 #!/bin/sh -ex
 
-NAME=distro
-BUILDDIR=build-distro
-rm -rf $BUILDDIR
-mkdir $BUILDDIR
-cd $BUILDDIR
-  rm -rf $NAME
-  mkdir $NAME
-  cd $NAME
-    repo init -u https://github.com/couchbase/php-memcached-manifest
-    repo init -u https://github.com/couchbase/php-memcached-manifest --mirror --depth=1 # don't ask
-    repo sync
-  cd ..
-  tar -czf $NAME.tgz $NAME
+NAME=php-couchbase-memcached
+rm -rf $NAME
+mkdir $NAME
+cd $NAME
+  FILES="Makefile \
+         build-distro \
+         build-php-memcached \
+         build-php-memcached.sh \
+         build-source-package.sh \
+         libmemcached \
+         php-couchbase \
+         php-memcached"
+  cp -r $FILES .
 cd ..
+tar -czf $NAME.tgz $NAME
+
 echo "$NAME.tgz done"
