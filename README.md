@@ -55,6 +55,6 @@ To build this package from source, follow these steps:
 
 ### Build
 
-    $ ./build-couchbase-memcached/build-couchbase-memcached.sh
+    $ make
 
 Done.
