@@ -1,4 +1,4 @@
-#!/bin/sh -ex
+#!/bin/sh -x
 
 NAME=php-couchbase-memcached-source
 rm -rf $NAME
