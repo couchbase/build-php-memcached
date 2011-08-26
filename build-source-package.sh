@@ -12,7 +12,7 @@ cd $NAME
          ../libmemcached \
          ../php-couchbase \
          ../php-memcached"
-  for file in $FILES; do cp -r $file .; done
+  for file in $FILES; do cp -a $file .; done
 cd ..
 tar -czf $NAME.tgz $NAME
 
