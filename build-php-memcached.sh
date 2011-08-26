@@ -54,6 +54,6 @@ cd php-memcached
   make clean
 cd ..
 
-echo "Done, created php-couchbase-memcached-1.7.tar.gz"
+echo "Done, created php-couchbase-memcached.tar.gz"
 
 # Done
