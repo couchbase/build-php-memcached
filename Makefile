@@ -1,7 +1,10 @@
 all:
 	./build-php-memcached.sh
 
-clean:
-	@rm -rf build downloads usr php-couchbase-memcached*
+source:
+	./build-source-package.php
 
-.PHONY: clean
+clean:
+	rm -rf build downloads usr php-couchbase-memcached*
+
+.PHONY: clean source
