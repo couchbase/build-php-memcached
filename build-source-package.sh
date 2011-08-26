@@ -4,14 +4,14 @@ NAME=php-couchbase-memcached
 rm -rf $NAME
 mkdir $NAME
 cd $NAME
-  FILES="Makefile \
-         build-distro \
-         build-php-memcached \
-         build-php-memcached.sh \
-         build-source-package.sh \
-         libmemcached \
-         php-couchbase \
-         php-memcached"
+  FILES="../Makefile \
+         ../build-distro \
+         ../build-php-memcached \
+         ../build-php-memcached.sh \
+         ../build-source-package.sh \
+         ../libmemcached \
+         ../php-couchbase \
+         ../php-memcached"
   cp -r $FILES .
 cd ..
 tar -czf $NAME.tgz $NAME
